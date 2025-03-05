@@ -21,6 +21,18 @@ Most endpoints require authentication using JWT (JSON Web Token). To authenticat
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
+### Validation Requirements
+
+The API enforces the following validation rules for authentication:
+
+- **Name**: Minimum 3 characters
+- **Email**: Must be a valid email format
+- **Password**: 
+  - Minimum 8 characters
+  - Must contain at least one lowercase letter
+  - Must contain at least one uppercase letter
+  - Must contain at least one number
+
 ### Authentication Endpoints
 
 #### Register a new user
@@ -126,6 +138,18 @@ Authorization: Bearer YOUR_JWT_TOKEN
   ```
 
 ## Users
+
+### Validation Requirements
+
+The API enforces the following validation rules for user data:
+
+- **Name**: Minimum 3 characters
+- **Email**: Must be a valid email format
+- **Password**: 
+  - Minimum 8 characters
+  - Must contain at least one lowercase letter
+  - Must contain at least one uppercase letter
+  - Must contain at least one number
 
 ### User Endpoints
 
@@ -308,6 +332,22 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 ## Categories
 
+### Validation Requirements
+
+The API enforces the following validation rules for categories:
+
+- **Name**: 
+  - Required for creation
+  - Minimum 2 characters
+  - Must be a string
+- **Name (Arabic)**: 
+  - Required for creation
+  - Minimum 2 characters
+  - Must be a string
+- **Color**: 
+  - Optional
+  - Must be a valid hex color code (e.g., #FFFFFF)
+
 ### Category Endpoints
 
 #### Get All Categories
@@ -450,6 +490,28 @@ Authorization: Bearer YOUR_JWT_TOKEN
   ```
 
 ## Answers
+
+### Validation Requirements
+
+The API enforces the following validation rules for answers:
+
+- **Title**: 
+  - Required for creation
+  - Minimum 3 characters
+  - Must be a string
+- **Title (Arabic)**: 
+  - Required for creation
+  - Minimum 3 characters
+  - Must be a string
+- **Content**: 
+  - Required for creation
+  - Must be a string
+- **Content (Arabic)**: 
+  - Required for creation
+  - Must be a string
+- **Category**: 
+  - Required for creation
+  - Must be a valid MongoDB ID
 
 ### Answer Endpoints
 
